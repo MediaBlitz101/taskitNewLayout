@@ -1,0 +1,14 @@
+{
+    "subject": "Cogs 120",
+    "cogs": [ {
+    	"idx": 0,
+    	"task":"Read 12-16",
+    	"subject": "COGS 120",
+    	"dueDate": "11-09-2016"
+
+    }
+    	
+    ],
+
+    "finished": []
+}

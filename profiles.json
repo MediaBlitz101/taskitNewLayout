@@ -1,0 +1,53 @@
+[
+	{
+		"username": "john",
+		"name": "John Doe",
+		"text": "Finished COGS homework!",
+		"profilepic": "/images/stock1.jpg",
+		"score": 65,
+		"todo": [
+			"john todo1",
+			"john todo2",
+			"john todo3"
+		],
+		"complete": [
+			"john complete1",
+			"john complete2",
+			"john complete3"
+		]
+	},
+	{
+		"username": "james",
+		"name": "James Fischer",
+		"text": "Ran 5 miles!",
+		"profilepic": "/images/stock2.jpg",
+		"score": 21,
+		"todo": [
+			"james todo1",
+			"james todo2",
+			"james todo3"
+		],
+		"complete": [
+			"james complete1",
+			"james complete2",
+			"james complete3"
+		]
+	},
+	{
+		"username": "jane",
+		"name": "Jane Baker",
+		"text": "Completed 5 tasks!",				
+		"profilepic": "/images/stock3.jpg",
+		"score": 46,
+		"todo": [
+			"jane todo1",
+			"jane todo2",
+			"jane todo3"
+		],
+		"complete": [
+			"jane complete1",
+			"jane complete2",
+			"jane complete3"
+		]
+	}
+]

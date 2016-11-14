@@ -1,0 +1,53 @@
+[
+	{
+		"username": "david",
+		"name": "David Bowie",
+		"text": "Wrote another song!",
+		"profilepic": "/images/stock4.jpg",
+		"score": 438,
+		"todo": [
+			"david todo1",
+			"david todo2",
+			"david todo3"
+		],
+		"complete": [
+			"david complete1",
+			"david complete2",
+			"david complete3"
+		]
+	},
+	{
+		"username": "emily",
+		"name": "Emily Fry",
+		"text": "Ran 12 miles!",
+		"profilepic": "/images/stock5.jpg",
+		"score": 210,
+		"todo": [
+			"emily todo1",
+			"emily todo2",
+			"emily todo3"
+		],
+		"complete": [
+			"emily complete1",
+			"emily complete2",
+			"emily complete3"
+		]
+	},
+	{
+		"username": "katie",
+		"name": "Katie Glass",
+		"text": "Completed 51 tasks!",				
+		"profilepic": "/images/stock6.jpg",
+		"score": 360,
+		"todo": [
+			"katie todo1",
+			"katie todo2",
+			"katie todo3"
+		],
+		"complete": [
+			"katie complete1",
+			"katie complete2",
+			"katie complete3"
+		]
+	}
+]

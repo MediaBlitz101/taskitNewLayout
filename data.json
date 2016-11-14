@@ -1,0 +1,57 @@
+{
+	"indexData": {
+		"title": "Home",
+		"indexChosen": "active",
+		"upcoming":[
+			{
+				"taskname": "Cogs Midterm Monday"
+			},
+			{
+				"taskname" : "Cogs 101A - Read Chapter 11 "
+			},
+			{
+				"taskname" : "Outline for essay"
+			}
+		]
+	},
+	"tasksData": {
+		"title": "Tasks",
+		"tasksChosen": "active"
+	},
+	"feedData": {
+		"title": "Feed",
+		"feedChosen": "active",
+		"posts": [
+			{
+				"name": "John Doe",
+				"text": "Post number 1",
+				"profilepic": "images/stock1.jpg"
+			},
+			{
+				"name": "John Doe",
+				"text": "Post number 2",
+				"profilepic": "images/stock1.jpg"
+			},
+			{
+				"name": "John Doe",
+				"text": "Post number 3",				
+				"profilepic": "images/stock1.jpg"
+			}
+		]
+	},
+	"groupsData": {
+		"title": "Groups",
+		"groupsChosen": "active",
+
+		"groups":[   
+		{
+			"groupName": "Cogs 120",
+			"groupPic": "http://placehold.it/140x80"
+		},
+		{
+			"groupName": "Cogs 120",
+			"groupPic": "http://placehold.it/140x80"
+		}
+		]
+	}
+}

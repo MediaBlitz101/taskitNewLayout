@@ -1,0 +1,22 @@
+.badge{
+	background-color: #EF3822
+}
+
+.table{
+	border: 1px solid black;
+}
+
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.img-circle{
+	background-color: #FF3F80;
+	height: 200px;
+    width: 200px;
+    border: 7px solid #d7ccc8;
+
+}
+

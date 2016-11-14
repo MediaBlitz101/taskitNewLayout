@@ -1,0 +1,46 @@
+{
+	"posts": [
+		{
+			"name": "John Doe",
+			"text": "Finished COGS homework!",
+			"profilepic": "images/stock1.jpg",
+			"link": "profile/john",
+			"score": 25
+		},
+		{
+			"name": "James Fischer",
+			"text": "Ran 5 miles!",
+			"profilepic": "images/stock2.jpg",
+			"link": "profile/james",
+			"score": 255
+		},
+		{
+			"name": "Jane Baker",
+			"text": "Completed 5 tasks!",				
+			"profilepic": "images/stock3.jpg",
+			"link": "profile/jane",
+			"score": 3445
+		},
+		{
+			"name": "John Baker",
+			"text": "Completed 5 tasks!",				
+			"profilepic": "images/stock3.jpg",
+			"link": "profile/jane",
+			"score": 125
+		},
+		{
+			"name": "Jenny Booker",
+			"text": "Completed 5 tasks!",				
+			"profilepic": "images/stock3.jpg",
+			"link": "profile/jane",
+			"score": 12
+		},
+		{
+			"name": "Kyle Booker",
+			"text": "Ate a whole pie!",				
+			"profilepic": "images/stock1.jpg",
+			"link": "profile/jane",
+			"score": 1
+		}
+	]
+}

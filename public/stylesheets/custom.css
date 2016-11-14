@@ -1,0 +1,32 @@
+.badge{
+	background-color: #EF3822
+}
+
+.table{
+	border: 1px solid black;
+}
+
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    height: 100px;
+    width: 600px;
+}
+.profile-avatar {
+    max-height: 70px;
+    max-width: 70px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.post {
+    border-left: 5px solid #c11f4d;
+    background-color: #eeeeee;
+    max-width: 60%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    padding-left: 12px;
+}
