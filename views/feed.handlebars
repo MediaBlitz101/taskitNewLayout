@@ -38,18 +38,17 @@
         </div>
     </div>
 </div>
-<ul class="media-list">
+
+<ul class="col-md-4" style="float: none; margin: auto;">
     {{#each known.posts}}
-    <li class="post">
-        <div class="media-left">
-            <a href="{{link}}">
-                <img class="profile-avatar" src="{{profilepic}}">
-            </a>
-        </div>
+    <li class="media">
+        <a class="media-left waves-light" href="{{link}}">
+            <img class="rounded-circle profile-avatar" src="{{profilepic}}">
+        </a>
         <div class="media-body">
             <a href={{link}}><strong class="media-heading">{{name}}</strong></a>
             <p>{{text}}</p>
-            <a class="btn btn-xs btn-default like"><span class="glyphicon glyphicon-thumbs-up"></span> Like!</a>
+            <a class="btn btn-primary btn-sm like"> Like!</a>
             <span class="score">{{score}}</span> liked!
         </div>
     </li>

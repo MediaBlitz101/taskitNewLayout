@@ -16,17 +16,16 @@
 .profile-avatar {
     max-height: 70px;
     max-width: 70px;
-    padding: 10px;
+    /*padding: 10px;*/
     border-radius: 20px;
 }
 
 .post {
     border-left: 5px solid #c11f4d;
     background-color: #eeeeee;
-    max-width: 60%;
     display: block;
-    align-items: center;
-    justify-content: center;
+    /*align-items: center;
+    justify-content: center;*/
     padding: 7px;
     padding-left: 12px;
 }
