@@ -1,3 +1,5 @@
+
+
 if (typeof jQuery === 'undefined') {
     throw new Error('This file requires jQuery');
 }
@@ -50,4 +52,10 @@ $(document).ready(function() {
             $('.media-list').append(posttext);
         }
     })
+
+    addfriend.onclick = function() {
+    friendmodal.style.display = "block";
+}
 })
+
+

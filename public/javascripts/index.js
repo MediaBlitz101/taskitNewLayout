@@ -1,3 +1,5 @@
+
+
 // gets the all group modal 
 var friendmodal = document.getElementById('friend-modal');
 
@@ -6,13 +8,33 @@ var addfriend = document.getElementById('add-friend');
 
 var closemodal = document.getElementById('closemodal');
 
-addfriend.onclick = function() {
-    friendmodal.style.display = "block";
-}
 
 closemodal.onclick = function() {
     friendmodal.style.display = "none";
 }
+
+/**$(document).ready(function() {
+
+    console.log("ready!");
+
+   ( function (a, b) {
+        var toDo = a;
+        var fin = b;
+
+        console.log(toDo);
+
+        document.getElementById("progressBar").value = 100*(fin/(toDo + fin));
+    })(taskData.cogs.length, taskData.finished.length);
+});**/
+
+/**function moveProgess(a, b) {
+    var toDo = a;
+    var fin = b;
+
+    console.log(toDo);
+
+    document.getElementById("progressBar").value =100* (fin/(toDo + fin));
+}**/
 
 function sortDescending(a, b) {
     var date1 = $(a).find(".year").text();
@@ -35,7 +57,7 @@ $(document).ready(function() {
     var index = $('.task-name').index(this);
     $('.task-name').click(function() {
         $('#out').append('<p>' + $('.task-name').index(this) + '</p>');
-        $('.task-name').splice(index,1);
+        $('.task-name').splice(index, 1);
     });
 });
 
