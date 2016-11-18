@@ -17,12 +17,15 @@ var groups1 = require('./routes/groups1');
 var feed = require('./routes/feed');
 var login = require('./routes/login');
 var profile = require('./routes/profile');
+var add2 = require('./routes/add2');
 
 var edit = require('./routes/edit');
+var edit2 = require('./routes/edit2');
 
 var loginSubmit = require('./routes/loginSubmit');
 var loginError = require('./routes/loginError');
 var done = require('./routes/done');
+var done2 = require('./routes/done2');
 var remove = require('./routes/remove');
 
 var app = express();
@@ -65,7 +68,10 @@ app.get('/tasks2', tasks2.view);
 // app.use('/feed', feed);
 
 app.get('/add', add.addTask);
+app.get('/add2', add2.addTask2);
 app.get('/edit', edit.editTask);
+app.get('/edit2', edit2.editTask2);
+
 
 
 app.get('/groups1', groups1.view);
@@ -73,6 +79,7 @@ app.get('/feed', feed.view);
 app.get('/profile/:name', profile.personInfo);
 app.get('/loginSubmit', loginSubmit.loginSub);
 app.get('/done', done.deleteTask);
+app.get('/done2', done2.deleteTask2);
 app.get('/remove', remove.permaDelete);
 
 // app.get('/groups1', function(req, res, next) {
