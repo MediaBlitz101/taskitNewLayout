@@ -8,9 +8,11 @@ var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 
 var index = require('./routes/index');
+var index2 = require('./routes/index2');
 // var users = require('./routes/users');
 var add = require('./routes/add');
 var tasks = require('./routes/tasks');
+var tasks2 = require('./routes/tasks2');
 var groups1 = require('./routes/groups1');
 var feed = require('./routes/feed');
 var login = require('./routes/login');
@@ -55,9 +57,11 @@ app.get('/login', login.view);
 app.get('/loginError', loginError.view);
 
 app.get('/', index.view);
+app.get('/index2', index2.view);
 
 // app.get('/users', users.view);
 app.get('/tasks', tasks.view);
+app.get('/tasks2', tasks2.view);
 // app.use('/feed', feed);
 
 app.get('/add', add.addTask);

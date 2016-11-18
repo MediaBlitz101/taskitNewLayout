@@ -39,7 +39,8 @@
                     </div>
 
                     <div style="text-align:center">
-                        <input type="submit" id="submitBtn" class="btn btn-default" value="Add task"></input>
+                        
+                        <button type="submit" id="submitBtn" class="btn btn-default"> Add Task </button> 
                     </div>
                 </form>
                 <!--FORM END-->
@@ -59,24 +60,29 @@
 
                 <!--.....................................beginning of for each loop............................... -->
                 {{#each taskData.cogs}}
-                <li class="list-group-item" id="grab">
+                <li class="list-group-item" id="all_elements">
                     <div class="element">
                         <div class="task-name" style="display:inline-block">
-                            <h5>{{task}}</h5></div>
+                            <h5>{{task}}</h5>
+                        </div>
                         <div>Subject: {{subject}}</div>
                       
                         <div style="text-align:right">Due:</div>
                         <div class="year" style="text-align:right">{{dueDate}}</div>
                         <button class="btn btn-info btn-sm descr">Description</button>
                         <p class="collapse">{{description}}</p>
+                        <div>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#done{{idx}}">Done</button>
+                            <button type="button" class="edit-btn btn btn-primary" data-toggle="modal" data-target=".edit-modal{{idx}}">EDIT</button>
+                        </div>
+                        
                         <hr>
                     </div>
 
 
 
                     <!--...................................................DONE MODAL............................................-->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#done">Done</button>
-                    <div class="modal fade bs-example-modal-sm" id="done" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                    <div class="modal fade bs-example-modal-sm" id="done{{idx}}" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
                         <div class="modal-dialog modal-sm" role="document">
                             <div class="modal-content">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -89,7 +95,8 @@
                                     <input type="hidden" class="form-control" id="subject" placeholder="Name" value="{{subject}}" name="subject">
                                     <input type="hidden" class="form-control" id="dueDate" placeholder="Name" value="{{dueDate}}" name="dueDate">
                                     <div style="text-align:center">
-                                        <input type="submit" id="submitBtn" class="btn btn-default" value="Yes"></input>
+                                        
+                                        <button id="submitBtn" class="btn btn-default"> Yes </button>
                                     </div>
                                 </form>
                             </div>
@@ -98,8 +105,8 @@
 
 
                     <!--................................................EDIT MODAL.........................................!!!-->
-                    <button type="button" class="edit-btn btn btn-primary" data-toggle="modal" data-target=".edit-modal">EDIT</button>
-                    <div class="modal edit-modal" data-backdrop="false">
+                    
+                    <div class="modal edit-modal{{idx}}" data-backdrop="false">
                         <div class="modal-content">
                             <div class="close-edit-modal" style="text-align:right">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -182,7 +189,9 @@
                                     <input type="hidden" class="form-control" id="subject" placeholder="Name" value="{{subject}}" name="subject">
                                     <input type="hidden" class="form-control" id="dueDate" placeholder="Name" value="{{dueDate}}" name="dueDate">
                                     <div style="text-align:center">
-                                        <input type="submit" id="submitBtn" class="btn btn-default" value="Yes"></input>
+                                       
+                                        <button id="submitBtn" class="btn btn-default"> Yes </button>
+
                                     </div>
                                 </form>
                             </div>

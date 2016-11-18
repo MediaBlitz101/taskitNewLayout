@@ -55,5 +55,5 @@ function sortDescending(a, b) {
     return date1 > date2 ? 1 : -1;
 };
 $(document).ready(function() {
-    $('#testing .list-group-item').sort(sortDescending).appendTo('#testing');
+    $('#all_elements .element').sort(sortDescending).appendTo('#all_elements');
 });
