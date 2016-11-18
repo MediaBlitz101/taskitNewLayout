@@ -2,6 +2,7 @@
 	"indexData": {
 		"title": "Home",
 		"indexChosen": "active",
+		"myScore": 9,
 		"upcoming":[
 			{
 				"taskname": "Cogs Midterm Monday"

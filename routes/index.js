@@ -1,20 +1,8 @@
 var data = require('../data.json');
-
 var feed = require('../feed.json');
-
 var progress = require('../taskData.json');
 
-var topPerson = { score: 0 };
-
-/**var toDo = progress.cogs.length;
-var fin = progress.finished.length;
-
-var prog = 100*(fin/(toDo+fin));
-
-data.indexData.prog = prog;**/
-
-
-
+var tryToBeat = { score: Number.MAX_SAFE_INTEGER };
 
 // Write the callback function
 function handleFile(err, data) {
@@ -24,17 +12,10 @@ function handleFile(err, data) {
 }
 
 feed.posts.forEach(function(post) {
-    if (post.score > topPerson.score)
-        topPerson = post;
+    if (post.score > data.indexData.myScore && tryToBeat.score > post.score)
+        tryToBeat = post;
 });
-
-data.indexData.topPerson = topPerson;
-
-
-// console.log(data);
-
-
-
+data.indexData.tryToBeat = tryToBeat;
 
 exports.view = function(req, res) {
     var toDo = req.app.get('taskData').cogs.length;
