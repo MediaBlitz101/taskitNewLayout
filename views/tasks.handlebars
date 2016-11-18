@@ -1,10 +1,8 @@
 <div class="col-xs-12 ">
-    
     <!--.......................................................ADD MODAL............................................................................................ -->
     <button class="btn btn-primary" id="add-btn"> Add task </button>
     <div class="addTask" style="text-align:center">
         <!-- Trigger/Open the add task modal -->
-        
         <!-- When open the add task modal -->
         <div id="add-modal" class="modal">
             <!-- open add modal content -->
@@ -16,7 +14,6 @@
                     <!--FORM Start-->
                     <h3>Add a Task</h3>
                     <div class="form-group">
-                        
                         <input required type="text" class="form-control" id="name" placeholder="Task Name" name="task">
                     </div>
                     <div class="form-group">
@@ -29,18 +26,14 @@
                         </select>
                     </div>
                     <div class="form-group">
-                       
                         <input type="text" class="flatpickr form-control" id="datepicker" placeholder="Due Date" name="dueDate">
                     </div>
-
                     <div class="form-group md-form">
                         <input placeholder="(optional)" type="text" id="description" class="form-control" name="description">
                         <label for="description">Description</label>
                     </div>
-
                     <div style="text-align:center">
-                        
-                        <button type="submit" id="submitBtn" class="btn btn-default"> Add Task </button> 
+                        <button type="submit" id="submitBtn" class="btn btn-default"> Add Task </button>
                     </div>
                 </form>
                 <!--FORM END-->
@@ -48,7 +41,6 @@
         </div>
     </div>
     <hr>
-
     <!--Panel-->
     <div class="card text-xs-center">
         <div class="card-header danger-color-dark white-text" style="text-align:center">
@@ -57,16 +49,14 @@
         <!-- BEGINNING OF CARD BLOCK-->
         <div class="panel-body">
             <div class="panel panel-warning">
-
                 <!--.....................................beginning of for each loop............................... -->
-                {{#each taskData.cogs}}
                 <li class="list-group-item" id="all_elements">
+                    {{#each taskData.cogs}}
                     <div class="element">
                         <div class="task-name" style="display:inline-block">
                             <h5>{{task}}</h5>
                         </div>
                         <div>Subject: {{subject}}</div>
-                      
                         <div style="text-align:right">Due:</div>
                         <div class="year" style="text-align:right">{{dueDate}}</div>
                         <button class="btn btn-info btn-sm descr">Description</button>
@@ -75,12 +65,8 @@
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#done{{idx}}">Done</button>
                             <button type="button" class="edit-btn btn btn-primary" data-toggle="modal" data-target=".edit-modal{{idx}}">EDIT</button>
                         </div>
-                        
                         <hr>
                     </div>
-
-
-
                     <!--...................................................DONE MODAL............................................-->
                     <div class="modal fade bs-example-modal-sm" id="done{{idx}}" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
                         <div class="modal-dialog modal-sm" role="document">
@@ -95,17 +81,13 @@
                                     <input type="hidden" class="form-control" id="subject" placeholder="Name" value="{{subject}}" name="subject">
                                     <input type="hidden" class="form-control" id="dueDate" placeholder="Name" value="{{dueDate}}" name="dueDate">
                                     <div style="text-align:center">
-                                        
                                         <button id="submitBtn" class="btn btn-default"> Yes </button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-
-
                     <!--................................................EDIT MODAL.........................................!!!-->
-                    
                     <div class="modal edit-modal{{idx}}" data-backdrop="false">
                         <div class="modal-content">
                             <div class="close-edit-modal" style="text-align:right">
@@ -132,10 +114,7 @@
                                     <input required type="text" class="flatpickr form-control" id="datepicker" placeholder="Due Date" value="{{dueDate}}" name="dueDate">
                                     <input type="hidden" value="{{idx}}" name="idx">
                                 </div>
-                                
-
                                 <button id="submitBtn" class="btn btn-default"> Edit Task </button>
-
                                 <div class="form-group md-form">
                                     <input placeholder="(optional)" type="text" id="description" class="form-control" name="description" value="{{description}}">
                                     <label for="description">Description</label>
@@ -143,65 +122,52 @@
                             </form>
                         </div>
                     </div>
+                    {{/each}}
                 </li>
-                {{/each}}
                 <!--..........END OF FOR EACH LOOP.................... -->
             </div>
         </div>
         <!--END OF CARD BLOCK -->
     </div>
     <!--/.Panel-->
-
-
-
-
-
-
-
-   
     <!--Panel-->
     <div class="card text-xs-center">
         <div class="card-header default-color-dark white-text">
             Completed Tasks
         </div>
         <div id="donelist" class="panel-body">
-            {{#each taskData.finished}}
             <li class="list-group-item" id="grab">
+                {{#each taskData.finished}}
                 <div class="element">
                     <div class="task-name" style="display:inline-block"><strike>{{task}}</strike></div>
                     <div>Subject: <strike>{{subject}}</strike></div>
                     <div style="text-align:right">Due:</div>
                     <div class="year" style="text-align:right"><strike>{{dueDate}}</strike></div>
                 </div>
-
-
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#remove">Remove</button>
-                    <div class="modal fade bs-example-modal-sm" id="remove" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-                        <div class="modal-dialog modal-sm" role="document">
-                            <div class="modal-content">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <form role="form" method="get" action="/remove">
-                                    <!--FORM Start-->
-                                    <h3>Are you sure?</h3>
-                                    <input type="hidden" value="{{idx}}" name="idx">
-                                    <input type="hidden" class="form-control" id="task" placeholder="Name" value="{{task}}" name="task">
-                                    <!-- <input type="text" class="form-control" id="subject" placeholder="Subject" value="{{subject}}" name="subject"> -->
-                                    <input type="hidden" class="form-control" id="subject" placeholder="Name" value="{{subject}}" name="subject">
-                                    <input type="hidden" class="form-control" id="dueDate" placeholder="Name" value="{{dueDate}}" name="dueDate">
-                                    <div style="text-align:center">
-                                       
-                                        <button id="submitBtn" class="btn btn-default"> Yes </button>
-
-                                    </div>
-                                </form>
-                            </div>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#remove{{idx}}">Remove</button>
+                <div class="modal fade bs-example-modal-sm" id="remove{{idx}}" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <form role="form" method="get" action="/remove">
+                                <!--FORM Start-->
+                                <h3>Are you sure?</h3>
+                                <input type="hidden" value="{{idx}}" name="idx">
+                                <input type="hidden" class="form-control" id="task" placeholder="Name" value="{{task}}" name="task">
+                                <!-- <input type="text" class="form-control" id="subject" placeholder="Subject" value="{{subject}}" name="subject"> -->
+                                <input type="hidden" class="form-control" id="subject" placeholder="Name" value="{{subject}}" name="subject">
+                                <input type="hidden" class="form-control" id="dueDate" placeholder="Name" value="{{dueDate}}" name="dueDate">
+                                <div style="text-align:center">
+                                    <button id="submitBtn" class="btn btn-default"> Yes </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
+                </div>
+                <hr>
 
-
-
+                 {{/each}}
             </li>
-            {{/each}}
         </div>
     </div>
     <!--/.Panel-->
