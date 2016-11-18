@@ -1,12 +1,79 @@
-<div class="jumbotron">
-    <div col-md-8>
+<!--Carousel Wrapper-->
+<div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+    <!--Indicators-->
+    <!--/.Indicators-->
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+        <!--First slide-->
+        <div class="carousel-item active">
+            <!--Mask color-->
+            <div class="view hm-white-strong">
+                <img src="http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-2.jpg" class="img-fluid" alt="">
+                <div class="full-bg-img">
+                </div>
+            </div>
+            <!--Caption-->
+            <div class="carousel-caption">
+                <div class="animated fadeInDown">
+                    <h3 class="h3-responsive">You can do it!</h3>
+                    <p>-Kyle Rico</p>
+                </div>
+            </div>
+            <!--Caption-->
+        </div>
+        <!--/First slide-->
+        <!--Second slide-->
+        <div class="carousel-item">
+            <!--Mask color-->
+            <div class="view hm-white-strong">
+                <img src="http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-2.jpg" class="img-fluid" alt="">
+                <div class="full-bg-img">
+                </div>
+            </div>
+            <!--Caption-->
+            <div class="carousel-caption">
+                <div class="animated fadeInDown">
+                    <h3 class="h3-responsive">Float like a butterfly, sting like a bee</h3>
+                    <p>-Ali</p>
+                </div>
+            </div>
+            <!--Caption-->
+        </div>
+        <!--/Second slide-->
+        <!--Third slide-->
+        <div class="carousel-item">
+            <!--Mask color-->
+            <div class="view hm-white-strong">
+                <img src="http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-2.jpg" class="img-fluid" alt="">
+                <div class="full-bg-img">
+                </div>
+            </div>
+            <!--Caption-->
+            <div class="carousel-caption">
+                <div class="animated fadeInDown">
+                    <h3 class="h3-responsive">Super light mask</h3>
+                    <p>Secondary text</p>
+                </div>
+            </div>
+            <!--Caption-->
+        </div>
+        <!--/Third slide-->
+    </div>
+    <!--/.Slides-->
+    <!--Controls-->
+    <!--/.Controls-->
+</div>
+<!--/.Carousel Wrapper-->
+<div col-md-8>
+    <div class="container">
         <h3 style="text-align:center"> Hello, John Doe </h3>
-       <progress class="progress progress-success" id="progressBar" value="{{prog}}" max="100">{{prog}}%</progress>
-       {{prog}}
+        <div>
+            <h5>Progress: {{prog}}% of your tasks are finished!</h5>
+            <progress class="progress progress-success" id="progressBar" value="{{prog}}" max="100"></progress>
+        </div>
     </div>
 </div>
 <hr>
-
 <div class="col-xs-12 ">
     <div id="friends" class="panel panel-default">
         <div class="panel-heading">
@@ -39,12 +106,13 @@
     </div>
     <hr>
     <!--Panel-->
-    <div class="card">
+    <div class="card text-xs-center">
         <div class="card-header danger-color-dark white-text" style="text-align:center">
             Upcoming
         </div>
         <div class="card-block">
             {{#each taskData.cogs}}
+            
             <div id="all_elements">
                 <div class="element">
                     <div class="task-name" style="display:inline-block">{{task}}</div>

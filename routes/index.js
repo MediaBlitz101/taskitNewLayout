@@ -6,12 +6,13 @@ var progress = require('../taskData.json');
 
 var topPerson = { score: 0 };
 
-var array1 = progress.cogs.length;
-var array2 = progress.finished.length;
+/**var toDo = progress.cogs.length;
+var fin = progress.finished.length;
 
-var prog = 100*(array1/(array1+array2));
+var prog = 100*(fin/(toDo+fin));
 
-data.indexData.prog = prog;
+data.indexData.prog = prog;**/
+
 
 
 
@@ -29,11 +30,20 @@ feed.posts.forEach(function(post) {
 
 data.indexData.topPerson = topPerson;
 
-console.log(array1);
+
 // console.log(data);
 
 
 
+
 exports.view = function(req, res) {
-    res.render('index', data.indexData);
+    var toDo = req.app.get('taskData').cogs.length;
+    var fin = req.app.get('taskData').finished.length;
+    var prog = 100*(fin/(toDo+fin));
+    var active = "active";
+
+
+	data.indexData.prog = Math.round(prog);
+	res.render('index', data.indexData);
+
 };

@@ -1,3 +1,8 @@
+if (typeof jQuery === 'undefined') {
+    throw new Error('This file requires jQuery');
+}
+
+
 $('.list-group-item').click(taskButtonActions);
 
 

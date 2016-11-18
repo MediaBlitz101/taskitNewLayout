@@ -5,40 +5,37 @@
     </div>
     <div id="friend-modal" class="modal">
         <div class="friend-modal-content">
-            <div id="closemodal" style="text-align:right">
-                <span class="glyphicon glyphicon-remove-circle"></span>
+            <div  id="closemodal" style="text-align:right">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
             <div id="friend form">
                 <label class="search"> Find Friends </label>
                 <input required type="text" class="form-control" id="search-friend" placeholder="username" name="search-friend">
-               <a href="/profile/jane"> <button class="btn btn-default" id="add">Search </button></a>
+                <a href="/profile/jane">
+                    <button class="btn btn-default" id="add">Search </button>
+                </a>
                 <div id="suggested-friends">
                     <label>People you might know</label>
-            
-                        {{#each unknown}}
-                       <ul>
-                            <div class="media-left">
-                                <a href="/profile/{{username}}">
-                                    <img class="profile-avatar" src="{{profilepic}}">
-                                </a>
-                                <span>
+                    {{#each unknown}}
+                    <ul>
+                        <div class="media-left">
+                            <a href="/profile/{{username}}">
+                                <img class="profile-avatar" src="{{profilepic}}">
+                            </a>
+                            <span>
                                     <a href="/profile/{{username}}">
                                         <strong>{{name}}</strong>
                                     </a>
                                     <button type="button" class="btn btn-primary friendreq" data-toggle="button" aria-pressed="false" autocomplete="off">Send Friend Request</button>
                                 </span>
-                            </div>
-                         </ul>
-                        {{/each}}
-                
-                   
-
+                        </div>
+                    </ul>
+                    {{/each}}
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <ul class="col-md-4" style="float: none; margin: auto;">
     {{#each known.posts}}
     <li class="media">

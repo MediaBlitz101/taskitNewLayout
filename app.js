@@ -52,6 +52,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/login', login.view);
 
+
 app.get('/loginError', loginError.view);
 
 app.get('/', index.view);

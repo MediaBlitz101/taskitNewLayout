@@ -53,9 +53,18 @@ $(document).ready(function() {
         }
     })
 
-    addfriend.onclick = function() {
+
+
+  addfriend.onclick = function() {
     friendmodal.style.display = "block";
 }
+
+//$('.close-friend-modal').click(function(){
+  ///  $('#friend-modal').fadeOut();
+//});
+
+
+  
 })
 
 

@@ -9,10 +9,10 @@ var addfriend = document.getElementById('add-friend');
 var closemodal = document.getElementById('closemodal');
 
 
-closemodal.onclick = function() {
+/**closemodal.onclick = function() {
     friendmodal.style.display = "none";
 }
-
+**/
 /**$(document).ready(function() {
 
     console.log("ready!");
