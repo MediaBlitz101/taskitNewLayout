@@ -21,7 +21,7 @@ var edit = require('./routes/edit');
 var loginSubmit = require('./routes/loginSubmit');
 var loginError = require('./routes/loginError');
 var done = require('./routes/done');
-
+var remove = require('./routes/remove');
 
 var app = express();
 
@@ -52,7 +52,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/login', login.view);
 
-
 app.get('/loginError', loginError.view);
 
 app.get('/', index.view);
@@ -70,7 +69,7 @@ app.get('/feed', feed.view);
 app.get('/profile/:name', profile.personInfo);
 app.get('/loginSubmit', loginSubmit.loginSub);
 app.get('/done', done.deleteTask);
-
+app.get('/remove', remove.permaDelete);
 
 // app.get('/groups1', function(req, res, next) {
   // res.render('groups1', data.groupsData);

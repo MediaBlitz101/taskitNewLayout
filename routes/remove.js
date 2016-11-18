@@ -1,4 +1,4 @@
-exports.deleteTask = function(req, res) {
+exports.permaDelete = function(req, res) {
 	var newTask = {
 
 			"idx" : req.query.idx,
@@ -13,12 +13,11 @@ exports.deleteTask = function(req, res) {
 
 if(req.query.task){
 
-	var tasks = req.app.get('taskData').cogs;
+	var tasks = req.app.get('taskData').finished;
 	tasks.splice(req.query.idx, 1);
-	req.app.get('taskData').cogs = tasks;
+	req.app.get('taskData').finished = tasks;
 	
-	req.app.get('taskData').finished.push(newTask);
-	req.app.get('taskData').lifecount.push(newTask);
+	
 
 };
 

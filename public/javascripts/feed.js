@@ -59,9 +59,9 @@ $(document).ready(function() {
     friendmodal.style.display = "block";
 }
 
-//$('.close-friend-modal').click(function(){
-  ///  $('#friend-modal').fadeOut();
-//});
+$('.close-friend-modal').click(function(){
+  $('#friend-modal').fadeOut();
+});
 
 
   
