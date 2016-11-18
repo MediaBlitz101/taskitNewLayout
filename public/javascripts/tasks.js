@@ -33,6 +33,10 @@ $('.close-edit-modal').click(function() {
     $('.edit-modal').fadeOut();
 });
 
+$('.descr').click(function () {
+    $(this).siblings('.collapse').collapse('toggle');
+});
+
 $(function() {
     $(".flatpickr").flatpickr({
         // disable opening calendar by clicking on input

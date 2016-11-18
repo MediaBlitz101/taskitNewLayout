@@ -18,6 +18,9 @@
                         <div>{{subject}}</div>
                         <div style="text-align:right">Due:</div>
                         <div class="year" style="text-align:right">{{dueDate}}</div>
+                        <button class="btn btn-info btn-sm descr">Description</button>
+                        <p class="collapse">{{description}}</p>
+                        <hr>
                     </div>
 
 
@@ -73,6 +76,10 @@
                                     <input type="hidden" value="{{idx}}" name="idx">
                                 </div>
                                 <input type="submit" id="submitBtn" class="btn btn-default" value="Edit Task"></input>
+                                <div class="form-group md-form">
+                                    <input placeholder="(optional)" type="text" id="description" class="form-control" name="description" value="{{description}}">
+                                    <label for="description">Description</label>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -115,6 +122,10 @@
                     <div class="form-group">
                         <label for="due date">Due Date:</label>
                         <input type="text" class="flatpickr form-control" id="datepicker" placeholder="Due Date" name="dueDate">
+                    </div>
+                    <div class="form-group md-form">
+                        <input placeholder="(optional)" type="text" id="description" class="form-control" name="description">
+                        <label for="description">Description</label>
                     </div>
                     <div style="text-align:center">
                         <input type="submit" id="submitBtn" class="btn btn-default" value="Add task"></input>
