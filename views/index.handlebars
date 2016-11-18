@@ -112,12 +112,13 @@
         </div>
         <div class="card-block">
             {{#each taskData.cogs}}
-            
             <div id="all_elements">
                 <div class="element">
                     <div class="task-name" style="display:inline-block">{{task}}</div>
                     <div style="text-align:right">Due:</div>
                     <div class="year" style="text-align:right">{{dueDate}}</div>
+                    <button class="btn btn-info btn-sm descr">Description</button>
+                    <p class="collapse">{{description}}</p>
                     <hr>
                 </div>
             </div>
