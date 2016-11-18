@@ -19,7 +19,7 @@ data.indexData.tryToBeat = tryToBeat;
 
 exports.view = function(req, res) {
     var toDo = req.app.get('taskData').cogs.length;
-    var fin = req.app.get('taskData').finished.length;
+    var fin = req.app.get('taskData').lifecount.length;
     var prog = 100*(fin/(toDo+fin));
     var active = "active";
 
