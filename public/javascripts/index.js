@@ -46,6 +46,11 @@ function sortDescending(a, b) {
 
     return date1 > date2 ? 1 : -1;
 };
+
+$('.descr').click(function () {
+    $(this).siblings('.collapse').collapse('toggle');
+});
+
 $(document).ready(function() {
     $('#all_elements .element').sort(sortDescending).appendTo('#all_elements');
 });
