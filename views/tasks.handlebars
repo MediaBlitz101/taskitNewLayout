@@ -47,6 +47,7 @@
         </div>
     </div>
     <hr>
+
     <!--Panel-->
     <div class="card text-xs-center">
         <div class="card-header danger-color-dark white-text" style="text-align:center">
@@ -145,51 +146,6 @@
     <!--/.Panel-->
 
 
-    <!--.......................................................ADD MODAL............................................................................................ -->
-    <div class="addTask" style="text-align:center">
-        <!-- Trigger/Open the add task modal -->
-       
-        <!-- When open the add task modal -->
-        <div id="add-modal" class="modal">
-            <!-- open add modal content -->
-            <div class="modal-content">
-                <div id="close-add-modal" style="text-align:right">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <form id="addFriendForm" role="form" method="get" action="/add">
-                    <!--FORM Start-->
-                    <h3>Add a Task</h3>
-                    <div class="form-group">
-                        <label for="task">Task:</label>
-                        <input required type="text" class="form-control" id="name" placeholder="Name" name="task">
-                    </div>
-                    <div class="form-group">
-                        <label for="priority">Subject: </label>
-                        <!-- <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject"> -->
-                        <select class="subjectpicker" name="subject">
-                            <option> Cogs 120</option>
-                            <option> Cogs 101A </option>
-                            <option> Cogs 102A </option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="due date">Due Date:</label>
-                        <input type="text" class="flatpickr form-control" id="datepicker" placeholder="Due Date" name="dueDate">
-                    </div>
-                    <div class="form-group md-form">
-                        <input placeholder="(optional)" type="text" id="description" class="form-control" name="description">
-                        <label for="description">Description</label>
-                    </div>
-                    <div style="text-align:center">
-                        
-                        <button id="submitbtn" class="btn btn-default"> Add Task</button> 
-                    </div>
-                </form>
-                <!--FORM END-->
-            </div>
-        </div>
-    </div>
-    <hr>
 
 
 
