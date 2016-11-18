@@ -1,6 +1,6 @@
 var data = require('../data.json');
 var feed = require('../feed.json');
-var progress = require('../taskData.json');
+
 
 var tryToBeat = { score: Number.MAX_SAFE_INTEGER };
 
