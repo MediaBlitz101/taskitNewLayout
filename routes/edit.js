@@ -34,6 +34,8 @@ exports.editTask = function(req, res) {
 			"subject": req.query.subject,
 
 			"dueDate": req.query.dueDate,
+
+			"description": req.query.description,
 		};
 
 
