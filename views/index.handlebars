@@ -13,18 +13,19 @@
 <hr>
 <div class="col-xs-12 ">
     <!--Panel-->
-   
     <!--/.Panel-->
     <div class="card text-xs-center">
         <div class="card-header" style="text-align:center">
-            To Do Today 
+            To Do Today
         </div>
-        {{#each taskData.cogs}}
+        {{#each dueToday}}
         <div id="accordion" role="tablist" aria-multiselectable="true">
             <div class="card">
                 <div class="card-header taskclick" role="tab" id="headingOne">
                     <h5 class="mb-0">
-                    <a>{{task}} </a>
+                       
+                    <a>{{task}}</a>
+                    <i class="material-icons">expand_more</i>
                      </h5>
                 </div>
                 <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
@@ -36,19 +37,60 @@
             {{/each}}
         </div>
     </div>
-</div>
-    <div id="friends" class="panel panel-default">
-        <div class="panel-heading">
-            <h5 class="panel-title" style="text-align: center;">Try to beat your friends!</h5>
-        </div>
-        <div class="panel-body">
-            <div class="thumbnail">
-                <a href="{{tryToBeat.link}}" style="text-align: center;">
-                    <p> {{tryToBeat.name}} </p>
-                    <div id="top-score">
-                        <span> Beat their score of: {{tryToBeat.score}} </span>
+   <button class="btn btn-primary" id="add-btn"> Add task </button>
+    <div class="addTask" style="text-align:center">
+        <!-- Trigger/Open the add task modal -->
+        <!-- When open the add task modal -->
+        <div id="add-modal" class="modal">
+            <!-- open add modal content -->
+            <div class="modal-content">
+                <div id="close-add-modal" style="text-align:right">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <form id="addFriendForm" role="form" method="get" action="/add">
+                    <!--FORM Start-->
+                    <h3>Add a Task</h3>
+                    <div class="form-group">
+                        <input required type="text" class="form-control" id="name" placeholder="Task Name" name="task">
                     </div>
-                </a>
+                    <div class="form-group">
+                        <label for="priority">Subject: </label>
+                        <!-- <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject"> -->
+                        <select class="subjectpicker" name="subject">
+                            <option> Cogs 120</option>
+                            <option> Cogs 101A </option>
+                            <option> Cogs 102A </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="flatpickr form-control" id="datepicker" placeholder="Due Date" name="dueDate">
+                    </div>
+                    <div class="form-group md-form">
+                        <input placeholder="(optional)" type="text" id="description" class="form-control" name="description">
+                        <label for="description">Description</label>
+                    </div>
+                    <div style="text-align:center">
+                        <button type="submit" id="submitBtn" class="btn btn-default"> Add Task </button>
+                    </div>
+                </form>
+                <!--FORM END-->
             </div>
         </div>
     </div>
+</div>
+<div id="friends" class="panel panel-default">
+    <div class="panel-heading">
+        <h5 class="panel-title" style="text-align: center;">Try to beat your friends!</h5>
+    </div>
+    <div class="panel-body">
+        <div class="thumbnail">
+            <a href="{{tryToBeat.link}}" style="text-align: center;">
+                <p> {{tryToBeat.name}} </p>
+                <div id="top-score">
+                    <span> Beat their score of: {{tryToBeat.score}} </span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<hr>
