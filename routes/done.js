@@ -1,6 +1,6 @@
 exports.deleteTask = function(req, res) {
 
-	var newTask = {
+	var doneTask = {
 		"idx" : req.query.idx,
 		"task": req.query.task,
 		"subject": req.query.subject,
@@ -21,8 +21,9 @@ exports.deleteTask = function(req, res) {
 
 		req.app.get('taskData').cogs = tasks;
 
-		req.app.get('taskData').finished.push(newTask);
-		req.app.get('taskData').lifecount.push(newTask);
+		doneTask.idx = req.app.get('taskData').finished.length;
+		req.app.get('taskData').finished.push(doneTask);
+		req.app.get('taskData').lifecount.push(doneTask);
 	};
 
  	// res.render('tasks', data);

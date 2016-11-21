@@ -11,6 +11,13 @@ exports.permaDelete = function(req, res) {
 	if(req.query.task){
 		var tasks = req.app.get('taskData').finished;
 		tasks.splice(req.query.idx, 1);
+
+		tasks.forEach (function (task) {
+			if (task.idx > req.query.idx) {
+				task.idx -= 1;
+			}
+		});
+		
 		req.app.get('taskData').finished = tasks;
 	};
 
