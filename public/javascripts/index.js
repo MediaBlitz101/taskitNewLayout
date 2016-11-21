@@ -66,6 +66,13 @@ $(document).ready(function() {
     });
 });
 
+
+$('.taskclick').click(function () {
+    $(this).siblings('.collapse').collapse('toggle');
+});
+
+
+
 /**function priorityColor(a) {
     var date1 = $(a).find(".year").text();
     date1 = date1.split('-');

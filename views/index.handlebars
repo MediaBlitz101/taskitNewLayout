@@ -1,81 +1,42 @@
-<!--Carousel Wrapper-->
-<div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
-    <!--Indicators-->
-    <!--/.Indicators-->
-    <!--Slides-->
-    <div class="carousel-inner" role="listbox">
-        <!--First slide-->
-        <div class="carousel-item active">
-            <!--Mask color-->
-            <div class="view hm-white-strong">
-                <img src="http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-2.jpg" class="img-fluid" alt="">
-                <div class="full-bg-img">
-                </div>
-            </div>
-            <!--Caption-->
-            <div class="carousel-caption">
-                <div class="animated fadeInDown">
-                    <h3 class="h3-responsive">"The minute you think of giving up, think of the reason why you held on so long"</h3>
-                    <p></p>
-                </div>
-            </div>
-            <!--Caption-->
-        </div>
-        <!--/First slide-->
-        <!--Second slide-->
-        <div class="carousel-item">
-            <!--Mask color-->
-            <div class="view hm-white-strong">
-                <img src="http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-2.jpg" class="img-fluid" alt="">
-                <div class="full-bg-img">
-                </div>
-            </div>
-            <!--Caption-->
-            <div class="carousel-caption">
-                <div class="animated fadeInDown">
-                    <h3 class="h3-responsive">"Float like a butterfly, sting like a bee"</h3>
-                    <p>-Ali</p>
-                </div>
-            </div>
-            <!--Caption-->
-        </div>
-        <!--/Second slide-->
-        <!--Third slide-->
-        <div class="carousel-item">
-            <!--Mask color-->
-            <div class="view hm-white-strong">
-                <img src="http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/white-background-2.jpg" class="img-fluid" alt="">
-                <div class="full-bg-img">
-                </div>
-            </div>
-            <!--Caption-->
-            <div class="carousel-caption">
-                <div class="animated fadeInDown">
-                    <h3 class="h3-responsive">"Start now and make a brand new ending"</h3>
-                    <p></p>
-                </div>
-            </div>
-            <!--Caption-->
-        </div>
-        <!--/Third slide-->
-    </div>
-    <!--/.Slides-->
-    <!--Controls-->
-    <!--/.Controls-->
-</div>
-<!--/.Carousel Wrapper-->
-<div col-md-8>
-    <div class="container">
-        <h3 style="text-align:center"> Hello, John Doe </h3>
-        <h6 id="lifetime" style="text-align:center">Lifetime tasks completed: {{taskData.lifecount.length}}</h6>
-        <div>
-            <h5>Progress: {{prog}}% of your tasks are finished!</h5>
+<div class="container">
+    <h3 style="text-align:center"> TASK IT </h3>
+    <div class="row">
+        <div class="col-xs-8">
+            <h5>Task Progress</h5>
             <progress class="progress progress-success" id="progressBar" value="{{prog}}" max="100"></progress>
+        </div>
+        <div class="col-xs-4">
+            Your Points: {{taskData.lifecount.length}}
         </div>
     </div>
 </div>
 <hr>
 <div class="col-xs-12 ">
+    <!--Panel-->
+   
+    <!--/.Panel-->
+    <div class="card text-xs-center">
+        <div class="card-header" style="text-align:center">
+            To Do Today 
+        </div>
+        {{#each taskData.cogs}}
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="card">
+                <div class="card-header taskclick" role="tab" id="headingOne">
+                    <h5 class="mb-0">
+                    <a>{{task}} </a>
+                     </h5>
+                </div>
+                <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="card-block">
+                        {{description}}
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
     <div id="friends" class="panel panel-default">
         <div class="panel-heading">
             <h5 class="panel-title" style="text-align: center;">Try to beat your friends!</h5>
@@ -89,42 +50,5 @@
                     </div>
                 </a>
             </div>
-            <div class="panel-footer">
-                <div id="friend-modal" class="modal">
-                    <div class="fried-modal-content">
-                        <div id="closemodal" style="text-align:right">
-                            <span class="glyphicon glyphicon-remove-circle"></span>
-                        </div>
-                        <div id="friend form">
-                            <label class="search"> Find Friends </label>
-                            <input required type="text" class="form-control" id="search-friend" placeholder="username" name="search-friend">
-                            <button class="btn btn-default" id="add"> Add </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-    <hr>
-    <!--Panel-->
-    <div class="card text-xs-center">
-        <div class="card-header danger-color-dark white-text" style="text-align:center">
-            Upcoming
-        </div>
-        <div class="card-block">
-            {{#each taskData.cogs}}
-            <div id="all_elements">
-                <div class="element">
-                    <div class="task-name" style="display:inline-block">{{task}}</div>
-                    <div style="text-align:right">Due:</div>
-                    <div class="year" style="text-align:right">{{dueDate}}</div>
-                    <button class="btn btn-info btn-sm descr">Description</button>
-                    <p class="collapse">{{description}}</p>
-                    <hr>
-                </div>
-            </div>
-            {{/each}}
-        </div>
-    </div>
-    <!--/.Panel-->
-</div>
