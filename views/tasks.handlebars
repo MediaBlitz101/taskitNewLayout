@@ -47,26 +47,44 @@
             Tasks To Do
         </div>
         <!-- BEGINNING OF CARD BLOCK-->
-        <div class="panel-body">
-            <div class="panel panel-warning">
+       
                 <!--.....................................beginning of for each loop............................... -->
                 <li class="list-group-item" id="all_elements">
                     {{#each taskData.cogs}}
                     <div class="element">
-                        <div class="task-name" style="display:inline-block">
-                            <h5>{{task}}</h5>
-                        </div>
-                        <div>Subject: {{subject}}</div>
-                        <div style="text-align:right">Due:</div>
-                        <div class="year" style="text-align:right">{{dueDate}}</div>
-                        <button class="btn btn-info btn-sm descr">Description</button>
-                        <p class="collapse">{{description}}</p>
+
+                         <div id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="card-header taskclick" role="tab" id="headingOne" style="text-align:left">
+                                <h5 class="mb-0">
+                                <a>{{task}} 
+                                <br>
+                                Subject:{{subject}}
+                                  DUE: {{dueDate}}
+                                </a>
+                                <i class="material-icons">expand_more</i>
+                                
+                                </h5>
+                             </div>
+                         
+                          <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="card-block">
+                                    {{description}}
+                                 </div>
+                         </div>
+                         </div>
+
+
+
+
                         <div>
                             <button type="button btn-sm" class="btn btn-primary" data-toggle="modal" data-target="#done{{idx}}"><i class="material-icons">done</i> </button>
                             <button type="button" class="edit-btn btn btn-primary" data-toggle="modal" data-target=".edit-modal{{idx}}">EDIT</button>
                         </div>
                         <hr>
                     </div>
+
+
+
                     <!--...................................................DONE MODAL............................................-->
                     <div class="modal fade bs-example-modal-sm" id="done{{idx}}" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
                         <div class="modal-dialog modal-sm" role="document">
@@ -125,8 +143,7 @@
                     {{/each}}
                 </li>
                 <!--..........END OF FOR EACH LOOP.................... -->
-            </div>
-        </div>
+          
         <!--END OF CARD BLOCK -->
     </div>
     <!--/.Panel-->
