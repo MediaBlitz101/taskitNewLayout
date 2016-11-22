@@ -2,10 +2,10 @@
     "subject": "Cogs 120",
     "cogs": [ {
     	"idx": 0,
-    	"task":"Read 12-16",
+    	"task":"Study for Midterm",
     	"subject": "COGS 120",
     	"dueDate": "11-09-2016",
-        "description": "read all of chapters 6-11"
+        "description": "review week 1-3 slides"
     }
     	
     ],
