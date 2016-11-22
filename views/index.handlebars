@@ -15,29 +15,9 @@
     <!--Panel-->
     <!--/.Panel-->
     <div class="card text-xs-center">
-        <div class="card-header" style="text-align:center">
-            To Do Today
-        </div>
-        {{#each dueToday}}
-        <div id="accordion" role="tablist" aria-multiselectable="true">
-            <div class="card">
-                <div class="card-header taskclick" role="tab" id="headingOne">
-                    <h5 class="mb-0">
-                       
-                    <a>{{task}}</a>
-                    <i class="material-icons">expand_more</i>
-                     </h5>
-                </div>
-                <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
-                    <div class="card-block">
-                        {{description}}
-                    </div>
-                </div>
-            </div>
-            {{/each}}
-        </div>
-    </div>
-   <button class="btn btn-primary" id="add-btn"> Add task </button>
+        <div class="card-header" style="text-align:left">
+            To Do Today <i class="fa fa-th-list" aria-hidden="true"></i> 
+          <a id="add-btn"> <i class="fa fa-plus pull-right" aria-hidden="true"></i> </a>
     <div class="addTask" style="text-align:center">
         <!-- Trigger/Open the add task modal -->
         <!-- When open the add task modal -->
@@ -77,7 +57,29 @@
             </div>
         </div>
     </div>
+
+        </div>
+        {{#each dueToday}}
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="card">
+                <div class="card-header taskclick" role="tab" id="headingOne">
+                    <h5 class="mb-0">
+                    <a>{{task}}</a>
+                    <i class="material-icons">expand_more</i>
+                     </h5>
+                </div>
+                <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="card-block">
+                        {{description}}
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+   
 </div>
+
 <div id="friends" class="panel panel-default">
     <div class="panel-heading">
         <h5 class="panel-title" style="text-align: center;">Try to beat your friends!</h5>
