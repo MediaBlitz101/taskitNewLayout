@@ -64,10 +64,15 @@ button{
     border-color: black;
 }
 
-h4{
+
+
+.card-header{
     color:white;
 }
 
+.modal-title{
+    color:black;
+}
 
 
 

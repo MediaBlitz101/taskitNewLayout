@@ -42,9 +42,34 @@
     font-weight:bold;
 
 }
+.card-header{
+    color:white;
+}
+
 .add-btn{
     border:0;
     background: none;
     box-shadow: 0;
     cursor: pointer;
 }
+
+.taskclick{
+    color:black;
+}
+
+.card-text{
+    color:black;
+    text-align:center;
+}
+
+.edge-header{
+    height:57px;
+    background-color:#e94734;
+    color:white;
+    text-align:center;
+}
+
+
+
+
+
