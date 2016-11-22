@@ -21,6 +21,13 @@ h2{
 
 } 
 
+button{
+    border:0;
+    background: none;
+    box-shadow: 0;
+    cursor: pointer;
+}
+
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
@@ -46,6 +53,22 @@ h2{
     text-decoration: none;
     cursor: pointer;
 }
+
+.element{
+    padding: 3em;
+    border: 1px black;
+}
+
+.btn{
+    border: 1px solid;
+    border-color: black;
+}
+
+h4{
+    color:white;
+}
+
+
 
 
 

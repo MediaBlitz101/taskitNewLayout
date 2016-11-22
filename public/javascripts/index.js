@@ -68,7 +68,7 @@ $(document).ready(function() {
 
 
 $('.taskclick').click(function () {
-    $(this).siblings('.collapse').collapse('toggle');
+    $(this).siblings('.accordian').collapse('toggle');
 });
 
 

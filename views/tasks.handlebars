@@ -1,7 +1,6 @@
 <div class="col-xs-12 ">
     <!--.......................................................ADD MODAL............................................................................................ -->
-    <button class="btn-floating btn btn-primary" id="add-btn"><i class="fa fa-plus" aria-hidden="true"></i> </button>
-
+    <button class="btn btn-dark red" id="add-btn" style="float:right"><i class="fa fa-plus" aria-hidden="true"></i> Task </button>
     <div class="addTask" style="text-align:center">
         <!-- Trigger/Open the add task modal -->
         <!-- When open the add task modal -->
@@ -14,20 +13,19 @@
                 <form id="addFriendForm" role="form" method="get" action="/add">
                     <!--FORM Start-->
                     <h3>New Task</h3>
-                    <div class="form-group">
+                    <div class="form-group md-form">
                         <input required type="text" class="form-control" id="name" placeholder="Task Name" name="task">
+                        <label> Task Name </label>
                     </div>
-                    <div class="form-group">
-                        <label for="priority">Subject: </label>
-                        <!-- <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject"> -->
-                        <select class="subjectpicker" name="subject">
-                            <option> Cogs 120</option>
-                            <option> Cogs 101A </option>
-                            <option> Cogs 102A </option>
-                        </select>
-                    </div>
-                    <div class="form-group">
+                    <div class="form-group md-form">
+                            
+                                <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject"> 
+                          
+                             <label for="priority">Subject: </label>
+                        </div>
+                    <div class="form-group md-form">
                         <input type="text" class="flatpickr form-control" id="datepicker" placeholder="Due Date" name="dueDate">
+                        <label> Due Date </label>
                     </div>
                     <div class="form-group md-form">
                         <input placeholder="(optional)" type="text" id="description" class="form-control" name="description">
@@ -44,122 +42,118 @@
     <hr>
     <!--Panel-->
     <div class="card text-xs-center">
-        <div class="card-header" style="text-align:center">
-           My Tasks <i class="fa fa-th-list" aria-hidden="true"></i>
+        <div class="card-header card-dark blue-grey" style="text-align:left">
+            <h4> My Tasks <i class="fa fa-th-list" aria-hidden="true"></i> </h4>
+
         </div>
         <!-- BEGINNING OF CARD BLOCK-->
-       
-                <!--.....................................beginning of for each loop............................... -->
-                <li class="list-group-item" id="all_elements">
-                    {{#each taskData.cogs}}
-                    <div class="element">
-
-                         <div id="accordion" role="tablist" aria-multiselectable="true">
-                            <div class="card-header taskclick" role="tab" id="headingOne" style="text-align:left">
-                                
-                                <h5 class="mb-0">
-                                <a>{{task}} 
-                                <br>
-                                Subject:{{subject}}
-                                <br>
-                                DUE: {{dueDate}}
+        <!--.....................................beginning of for each loop............................... -->
+        <div class="list-group-item" id="all_elements">
+            {{#each taskData.cogs}}
+            <div class="element">
+                <div class="row accordion" role="tablist" aria-multiselectable="true">
+                    <div class="row taskclick">
+                        <div class="col-xs-8">
+                            <div class="mb-0" role="tab" id="headingOne" style="text-align:left">
+                                <a>
+                                    <h5>{{task}}</h5> 
+                                    <br>
+                                    Subject:{{subject}}
+                                    <br>
+                                    DUE: {{dueDate}}
                                 </a>
-                                <div>
-                               
+                            </div>
+                        </div>
 
-                             <button type="button btn-sm " class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#done{{idx}}"><i class="fa fa-check" aria-hidden="true"></i> Done </button>
-
-                            <button type="button" class="edit-btn btn btn-primary " data-toggle="modal" data-target=".edit-modal{{idx}}"><i class="fa fa-edit" aria-hidden="true"></i>Edit</button>
-                       
-
+                        <div class="col-xs-4 button-section">
+                            <button type="button btn-sm " class="btn btn-light teal lighten-2" data-toggle="modal" data-target="#done{{idx}}">
+                                <i class="fa fa-check" aria-hidden="true"></i> 
+                            </button>
+                            <br>
+                            <button type="button" class="edit-btn btn btn-light teal lighten-2 " data-toggle="modal" data-target=".edit-modal{{idx}}">
+                                <i class="fa fa-edit" aria-hidden="true"></i> 
+                            </button>
+                            <br>
+                            <button class="">
+                                <i class="material-icons" style="text-align:right">expand_more</i>
+                            </button>
+                        </div>
+                    </div>
+                
+                
+                    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="card-block">
+                            {{description}}
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+            </div>
+            <!--...................................................DONE MODAL............................................-->
+            <div class="modal fade bs-example-modal-sm" id="done{{idx}}" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <form role="form" method="get" action="/done">
+                            <!--FORM Start-->
+                            <h3>Are you sure?</h3>
+                            <input type="hidden" value="{{idx}}" name="idx">
+                            <input type="hidden" class="form-control" id="task" placeholder="Name" value="{{task}}" name="task">
+                            <!-- <input type="text" class="form-control" id="subject" placeholder="Subject" value="{{subject}}" name="subject"> -->
+                            <input type="hidden" class="form-control" id="subject" placeholder="Name" value="{{subject}}" name="subject">
+                            <input type="hidden" class="form-control" id="dueDate" placeholder="Name" value="{{dueDate}}" name="dueDate">
+                            <div style="text-align:center">
+                                <button id="submitBtn" class="btn btn-default"> Yes </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--................................................EDIT MODAL.........................................!!!-->
+            <div class="modal edit-modal{{idx}}" data-backdrop="false">
+                <div class="modal-content">
+                    <div class="close-edit-modal" style="text-align:right">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <form role="form" method="get" action="/edit">
+                        <!--FORM Start-->
+                        <h3>Edit Task</h3>
+                        <div class="form-group md-form">
+                            
+                            <input required type="text" class="form-control" id="name" placeholder="Name" value="{{task}}" name="task">
+                            <label> Task Name </label>
+                        </div>
+                        <div class="form-group md-form">
+                            
+                                <input type="text" class="form-control" id="subject" placeholder="Subject" value="{{subject}}" name="subject"> 
                           
-                                <a><i class="material-icons" style="text-align:right">expand_more</i></a>
-                          
-                                
-                                </h5>
-                             </div>
-                         
-                          <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
-                                <div class="card-block">
-                                    {{description}}
-                                 </div>
-                         </div>
-
-                         </div>
-
-
+                             <label for="priority">Subject: </label>
+                        </div>
+                        <div class="form-group md-form">
+                            
+                            <input required type="text" class="flatpickr form-control" id="datepicker" placeholder="Due Date" value="{{dueDate}}" name="dueDate">
+                            <label for="due date">Due Date:</label>
+                            <input type="hidden" value="{{idx}}" name="idx">
+                        </div>
                         
-                        <hr>
-                    </div>
-
-
-
-                    <!--...................................................DONE MODAL............................................-->
-                    <div class="modal fade bs-example-modal-sm" id="done{{idx}}" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-                        <div class="modal-dialog modal-sm" role="document">
-                            <div class="modal-content">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <form role="form" method="get" action="/done">
-                                    <!--FORM Start-->
-                                    <h3>Are you sure?</h3>
-                                    <input type="hidden" value="{{idx}}" name="idx">
-                                    <input type="hidden" class="form-control" id="task" placeholder="Name" value="{{task}}" name="task">
-                                    <!-- <input type="text" class="form-control" id="subject" placeholder="Subject" value="{{subject}}" name="subject"> -->
-                                    <input type="hidden" class="form-control" id="subject" placeholder="Name" value="{{subject}}" name="subject">
-                                    <input type="hidden" class="form-control" id="dueDate" placeholder="Name" value="{{dueDate}}" name="dueDate">
-                                    <div style="text-align:center">
-                                        <button id="submitBtn" class="btn btn-default"> Yes </button>
-                                    </div>
-                                </form>
-                            </div>
+                        <div class="form-group md-form">
+                            <input placeholder="(optional)" type="text" id="description" class="form-control" name="description" value="{{description}}">
+                            <label for="description">Description</label>
                         </div>
-                    </div>
-                    <!--................................................EDIT MODAL.........................................!!!-->
-                    <div class="modal edit-modal{{idx}}" data-backdrop="false">
-                        <div class="modal-content">
-                            <div class="close-edit-modal" style="text-align:right">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            </div>
-                            <form role="form" method="get" action="/edit">
-                                <!--FORM Start-->
-                                <h3>Edit Task</h3>
-                                <div class="form-group">
-                                    <label for="task">Task:</label>
-                                    <input required type="text" class="form-control" id="name" placeholder="Name" value="{{task}}" name="task">
-                                </div>
-                                <div class="form-group">
-                                    <label for="priority">Subject: </label>
-                                    <!-- <input type="text" class="form-control" id="subject" placeholder="Subject" value="{{subject}}" name="subject"> -->
-                                    <select class="subjectpicker" name="subject" value="{{subject}}">
-                                        <option> Cogs 120</option>
-                                        <option> Cogs 101A </option>
-                                        <option> Cogs 102A </option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="due date">Due Date:</label>
-                                    <input required type="text" class="flatpickr form-control" id="datepicker" placeholder="Due Date" value="{{dueDate}}" name="dueDate">
-                                    <input type="hidden" value="{{idx}}" name="idx">
-                                </div>
-                                <button id="submitBtn" class="btn btn-default"> Edit Task </button>
-                                <div class="form-group md-form">
-                                    <input placeholder="(optional)" type="text" id="description" class="form-control" name="description" value="{{description}}">
-                                    <label for="description">Description</label>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    {{/each}}
-                </li>
-                <!--..........END OF FOR EACH LOOP.................... -->
-          
+                        <button id="submitBtn" class="btn btn-default"> Edit Task </button>
+                    </form>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <!--..........END OF FOR EACH LOOP.................... -->
         <!--END OF CARD BLOCK -->
     </div>
     <!--/.Panel-->
     <!--Panel-->
     <div class="card text-xs-center">
-        <div class="card-header">
-            Completed Tasks <i class="fa fa-check" aria-hidden="true"></i>
+        <div class="card-header card-dark blue-grey" style="text-align:left">
+            <h4> Completed Tasks <i class="fa fa-check" aria-hidden="true"></i> </h4>
         </div>
         <div id="donelist" class="panel-body">
             <li class="list-group-item" id="grab">
@@ -170,7 +164,7 @@
                     <div style="text-align:right">Due:</div>
                     <div class="year" style="text-align:right"><strike>{{dueDate}}</strike></div>
                 </div>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#remove{{idx}}">Remove</button>
+                <button type="button" class="btn btn-dark red" data-toggle="modal" data-target="#remove{{idx}}"><i class="fa fa-remove" aria-hidden="true"></i>Remove</button>
                 <div class="modal fade bs-example-modal-sm" id="remove{{idx}}" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
                     <div class="modal-dialog modal-sm" role="document">
                         <div class="modal-content">
@@ -190,9 +184,7 @@
                         </div>
                     </div>
                 </div>
-                <hr>
-
-                 {{/each}}
+                <hr> {{/each}}
             </li>
         </div>
     </div>

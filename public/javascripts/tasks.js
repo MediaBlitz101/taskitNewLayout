@@ -33,7 +33,7 @@ $('.close-edit-modal').click(function() {
     $('.edit-modal').fadeOut();
 });
 
-$('.descr').click(function () {
+$('.taskclick').click(function () {
     $(this).siblings('.collapse').collapse('toggle');
 });
 
@@ -42,10 +42,6 @@ $(function() {
         // disable opening calendar by clicking on input
         dateFormat: "m-d-Y"
     });
-});
-
-$('.taskclick').click(function () {
-    $(this).siblings('.collapse').collapse('toggle');
 });
 
 function sortDescending(a, b) {

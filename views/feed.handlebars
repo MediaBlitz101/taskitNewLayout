@@ -1,7 +1,12 @@
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous"> -->
-<div>
-    <div style="text-align:right">
-        <button type="add-friend" class="btn btn-default" id="add-friend">Add Friends</button>
+<div class="container">
+     <h3 style="text-align:center"> My Feed </h3>
+     <div "col-xs-8">
+        Beat Their Score HERE !! 
+     </div>
+
+    <div style="text-align:right" "col-xs-4">
+        <button type="add-friend" class="btn btn-dark red" id="add-friend"> <i class="fa fa-plus" aria-hidden="true"></i>   Add Friends</button>
     </div>
     <div id="friend-modal" class="modal">
         <div class="friend-modal-content">
@@ -36,7 +41,7 @@
         </div>
     </div>
 </div>
-<ul class="col-md-4" id="main-feed" style="float: none; margin: auto;">
+<ul class="col-md-8" id="main-feed" style="float: none; margin: auto;">
     {{#each known.posts}}
     <li class="media">
         <a class="media-left waves-light" href="{{link}}">
@@ -45,7 +50,7 @@
         <div class="media-body">
             <a href={{link}}><strong class="media-heading">{{name}}</strong></a>
             <p>{{text}}</p>
-            <a class="btn btn-primary btn-sm like"> Like!</a>
+            <a class="btn btn-default btn-sm like"> Like!</a>
             <span class="score">{{score}}</span> liked!
         </div>
     </li>

@@ -23,6 +23,8 @@
 
 }
 
+
+
 #suggested-friends {
     margin-top: 10px;
 }
@@ -39,4 +41,10 @@
     color:green;
     font-weight:bold;
 
+}
+.add-btn{
+    border:0;
+    background: none;
+    box-shadow: 0;
+    cursor: pointer;
 }
