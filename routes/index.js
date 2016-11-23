@@ -1,7 +1,6 @@
 var data = require('../data.json');
 var feed = require('../feed.json');
 
-
 var tryToBeat = { score: Number.MAX_SAFE_INTEGER };
 
 // Write the callback function
@@ -37,5 +36,7 @@ exports.view = function(req, res) {
 
     data.indexData.dueToday = dueToday;
 	data.indexData.prog = Math.round(prog);
+
+    data.indexData.showAlternate = true;
 	res.render('index', data.indexData);
 };

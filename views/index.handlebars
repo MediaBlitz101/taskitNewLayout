@@ -1,4 +1,3 @@
-
 <div class="container">
     <div class="row">
         <div class="col-xs-8">
@@ -31,8 +30,11 @@
             <div class=" card card-block">
                 <div class="card text-xs-center">
                     <div class="card-header card-dark blue-grey lighten-1" style="text-align:left">
-                        <h4>To Do Today <i class="fa fa-th-list" aria-hidden="true"></i> 
-          <div class="add-btn" id="add-btn"> <i class="fa fa-plus pull-right" aria-hidden="true"></i></div>
+                        <h4>To Do Today <i class="fa fa-th-list" aria-hidden="true"></i>
+                        {{#if showAlternate}}
+                            <div class="add-btn" id="add-btn"> <i class="fa fa-plus pull-right" aria-hidden="true"></i></div>
+                        {{else}}
+                        {{/if}}
             </h4>
                         <div class="addTask" style="text-align:center">
                             <!-- Trigger/Open the add task modal -->
@@ -90,6 +92,10 @@
                     </div>
                 </div>
             </div>
+            {{#if showAlternate}}
+            {{else}}
+                <button class="btn btn-default pull-right" id="add-btn"> Add Task </button>
+            {{/if}}
         </div>
     </div>
 </div>
