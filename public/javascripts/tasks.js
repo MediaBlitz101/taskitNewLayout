@@ -25,9 +25,14 @@ function taskButtonActions(event) {
 $('#add-btn').click(function() {
     $('#add-modal').fadeToggle();
     ga('send', 'event', 'add-btn', 'click');
-    
-
 });
+
+$('#add-btn2').click(function() {
+    $('#add-modal').fadeToggle();
+    ga('send', 'event', 'add-btn2', 'click');
+});
+
+
 
 $('#close-add-modal').click(function() {
     $('#add-modal').fadeToggle();
