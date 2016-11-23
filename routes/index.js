@@ -17,6 +17,9 @@ feed.posts.forEach(function(post) {
 data.indexData.tryToBeat = tryToBeat;
 
 exports.view = function(req, res) {
+    data.indexData.showAlternate = true;
+    res.render('index', data.indexData);
+
 
     var tasks = req.app.get('taskData').cogs;
     
@@ -37,11 +40,12 @@ exports.view = function(req, res) {
     data.indexData.dueToday = dueToday;
 	data.indexData.prog = Math.round(prog);
 
-    data.indexData.showAlternate = true;
-	res.render('index', data.indexData);
+    
 };
 
 exports.view2 = function(req, res) {
+    data.indexData.showAlternate = false;
+    res.render('index', data.indexData);
 
     var tasks = req.app.get('taskData').cogs;
     
@@ -62,6 +66,5 @@ exports.view2 = function(req, res) {
     data.indexData.dueToday = dueToday;
     data.indexData.prog = Math.round(prog);
 
-    data.indexData.showAlternate = false;
-    res.render('index', data.indexData);
+    
 };
