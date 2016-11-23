@@ -24,6 +24,9 @@ function taskButtonActions(event) {
 // When the user clicks on the button, open the modal 
 $('#add-btn').click(function() {
     $('#add-modal').fadeToggle();
+    ga('send', 'event', 'add-btn', 'click');
+    
+
 });
 
 $('#close-add-modal').click(function() {
