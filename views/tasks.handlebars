@@ -146,34 +146,32 @@
             <li class="list-group-item" id="grab">
                 {{#each taskData.finished}}
                 <div class="element">
-                   
-
                     <!-- things will chane -->
-                     <div class="row accordion" role="tablist" aria-multiselectable="true">
-                    <div class="row taskclick">
-                        <div class="col-xs-8">
-                            <div class="mb-0" role="tab" id="headingOne" style="text-align:left">
-                                <a>
-                                    <h5>{{task}}</h5>
-                                    <br> Subject:{{subject}}
-                                    <br> DUE: {{dueDate}}
-                                </a>
+                    <div class="row accordion" role="tablist" aria-multiselectable="true">
+                        <div class="row taskclick">
+                            <div class="col-xs-8">
+                                <div class="mb-0" role="tab" id="headingOne" style="text-align:left">
+                                    <a>
+                                        <h5>{{task}}</h5>
+                                        <br> Subject:{{subject}}
+                                        <br> DUE: {{dueDate}}
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 button-section">
+                                    <button type="button" class="btn btn-dark red" data-toggle="modal" data-target="#remove{{idx}}"><i class="fa fa-remove" aria-hidden="true"></i>Remove</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-xs-4 button-section">
-                             <button type="button" class="btn btn-dark red" data-toggle="modal" data-target="#remove{{idx}}"><i class="fa fa-remove" aria-hidden="true"></i>Remove</button>
+                        <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="card-block">
+                                {{description}}
+                            </div>
                         </div>
                     </div>
-                    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
-                        <div class="card-block">
-                            {{description}}
-                        </div>
-                    </div>
-                </div>
                     <!--  end of things will change -->
-
                 </div>
-               
                 <div class="modal fade bs-example-modal-sm" id="remove{{idx}}" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
                     <div class="modal-dialog modal-sm" role="document">
                         <div class="modal-content">
@@ -184,7 +182,6 @@
                                 <input type="hidden" value="{{idx}}" name="idx">
                                 <input type="hidden" class="form-control" id="task" placeholder="Name" value="{{task}}" name="task">
                                 <!-- <input type="text" class="form-control" id="subject" placeholder="Subject" value="{{subject}}" name="subject"> -->
-
                                 <input type="hidden" class="form-control" id="subject" placeholder="Name" value="{{subject}}" name="subject">
                                 <input type="hidden" class="form-control" id="dueDate" placeholder="Name" value="{{dueDate}}" name="dueDate">
                                 <div style="text-align:center">
