@@ -29,7 +29,6 @@ $('#add-btn').click(function() {
 
 
 
-
 $('#close-add-modal').click(function() {
     $('#add-modal').fadeToggle();
 });
