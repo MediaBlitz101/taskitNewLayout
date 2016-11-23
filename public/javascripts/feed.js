@@ -1,5 +1,3 @@
-
-
 if (typeof jQuery === 'undefined') {
     throw new Error('This file requires jQuery');
 }
@@ -31,25 +29,24 @@ $(document).ready(function() {
         alert("Friend request sent!");
     });
 
-    var posttext = '<li class="post"> \
-        <div class="post-person"> \
-            <a class="post-person-profilelink" href="javascript:void(0);"> \
-                <img class="profile-avatar" src="http://lorempixel.com/500/500/people/"> \
-                <strong class="profile-name">Mystery Person</strong> \
+    var posttext = '<li class="media"> \
+            <a class="media-left waves-light" href="javascript:void(0);"> \
+                <img class="rounded-circle profile-avatar" src="http://lorempixel.com/500/500/people/"> \
             </a> \
-        </div> \
-        <div class="post-text"> \
+        <div class="media-body"> \
+        <a href="javascript:void(0);"><strong class="media-heading">Mystery Person</strong></a> \
             <p> \
                 Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. \
             </p> \
-            <a class="btn btn-xs btn-default"><span class="glyphicon glyphicon-thumbs-up"></span> Like!</a> \
+            <a class="btn btn-default btn-sm like"> Like!</a> \
+            <span class="score">37</span> liked! \
         </div> \
     </li>';
 
 
     $(window).scroll(function() {
-        if ($(document).height() <= $(window).scrollTop() + $(window).height()) {
-            $('.media-list').append(posttext);
+        if ($(document).height() <= $(window).scrollTop() + $(window).height() + 1) {
+            $('#main-feed').append(posttext);
         }
     })
 
