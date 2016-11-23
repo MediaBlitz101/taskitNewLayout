@@ -1,57 +1,99 @@
-<div class="jumbotron">
-    <div col-md-8>
-        <h3 style="text-align:center"> Hello, John Doe </h3>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-xs-8">
+            <h5>Task Progress</h5>
+            <progress class="progress progress-success" id="progressBar" value="{{prog}}" max="100"></progress>
+        </div>
+        <div class="col-xs-4">
+            <div class="card card block">
+                <div class="card-header card-dark blue-grey lighten-1">
+                    My Points</div>
+                <div class="card-text">
+                    <h4>{{taskData.lifecount.length}}</h4>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <hr>
-<div class="col-xs-12 ">
-    <div id="friends" class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title"> Top Scorer </h3>
-        </div>
-        <div class="panel-body">
-            <div class="thumbnail">
-                <a href="{{topPerson.link}}">
-                    <p> {{topPerson.name}} </p>
-                    <div id="top-score">
-                        <span> Beat their score of: {{topPerson.score}} </span>
-                    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card card-block ">
+                <h4 class="card-header card-dark blue-grey lighten-1">Try to Beat Your Friends!</h4>
+                <a href="{{tryToBeat.link}}" class="card-link" id="top-score" style="text-align:center">
+                    <p class="card-text"> {{tryToBeat.name}}
+                        <br> Beat their Score of: {{tryToBeat.score}}
+                    </p>
                 </a>
             </div>
-            <div class="panel-footer">
-                <div id="friend-modal" class="modal">
-                    <div class="fried-modal-content">
-                        <div id="closemodal" style="text-align:right">
-                            <span class="glyphicon glyphicon-remove-circle"></span>
+            <div class=" card card-block">
+                <div class="card text-xs-center">
+                    <div class="card-header card-dark blue-grey lighten-1" style="text-align:left">
+                        <h4>To Do Today 
+            </h4>
+                        <div class="addTask" style="text-align:center">
+                            <!-- Trigger/Open the add task modal -->
+                            <!-- When open the add task modal -->
+                            <div id="add-modal" class="modal">
+                                <!-- open add modal content -->
+                                <div class="modal-content">
+                                    <div id="close-add-modal" style="text-align:right">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    </div>
+                                    <form id="addFriendForm" role="form" method="get" action="/add">
+                                        <!--FORM Start-->
+                                        <h3 class="modal-title">New Task</h3>
+                                        <div class="form-group md-form">
+                                            <input required type="text" class="form-control" id="name" placeholder="Task Name" name="task">
+                                            <label> Task Name </label>
+                                        </div>
+                                        <div class="form-group md-form">
+                                            <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
+                                            <label for="priority">Subject: </label>
+                                        </div>
+                                        <div class="form-group md-form">
+                                            <input type="text" class="flatpickr form-control" id="datepicker" placeholder="Due Date" name="dueDate">
+                                            <label> Due Date </label>
+                                        </div>
+                                        <div class="form-group md-form">
+                                            <input placeholder="(optional)" type="text" id="description" class="form-control" name="description">
+                                            <label for="description">Description</label>
+                                        </div>
+                                        <div style="text-align:center">
+                                            <button type="submit" id="submitBtn" class="btn btn-default"> Add <i class="fa fa-check-circle" aria-hidden="true"></i> </button>
+                                        </div>
+                                    </form>
+                                    <!--FORM END-->
+                                </div>
+                            </div>
                         </div>
-                        <div id="friend form">
-                            <label class="search"> Find Friends </label>
-                            <input required type="text" class="form-control" id="search-friend" placeholder="username" name="search-friend">
-                            <button class="btn btn-default" id="add"> Add </button>
+                    </div>
+                    {{#each dueToday}}
+                    <div id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header taskclick" role="tab" id="headingOne">
+                                <h5 class="mb-0">
+                    <a>{{task}}</a>
+                    <i class="material-icons">expand_more</i>
+                     </h5>
+                            </div>
+                            <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="card-block">
+                                    {{description}}
+                                </div>
+                            </div>
                         </div>
+                        {{/each}}
                     </div>
                 </div>
             </div>
+            <button class="btn btn-default pull-right" id="add-btn"> Add Task </button>
+
+
         </div>
     </div>
-    <hr>
-    <!--Panel-->
-    <div class="card">
-        <div class="card-header danger-color-dark white-text" style="text-align:center">
-            Upcoming
-        </div>
-        <div class="card-block">
-            {{#each taskData.cogs}}
-            <div id="all_elements">
-                <div class="element">
-                    <div class="task-name" style="display:inline-block">{{task}}</div>
-                    <div style="text-align:right">Due:</div>
-                    <div class="year" style="text-align:right">{{dueDate}}</div>
-                    <hr>
-                </div>
-            </div>
-            {{/each}}
-        </div>
-    </div>
-    <!--/.Panel-->
 </div>
