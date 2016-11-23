@@ -8,24 +8,24 @@ var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
 
 var index = require('./routes/index');
-var index2 = require('./routes/index2');
+// var index2 = require('./routes/index2');
 // var users = require('./routes/users');
 var add = require('./routes/add');
 var tasks = require('./routes/tasks');
-var tasks2 = require('./routes/tasks2');
-var groups1 = require('./routes/groups1');
+// var tasks2 = require('./routes/tasks2');
+// var groups1 = require('./routes/groups1');
 var feed = require('./routes/feed');
 var login = require('./routes/login');
 var profile = require('./routes/profile');
-var add2 = require('./routes/add2');
+// var add2 = require('./routes/add2');
 
 var edit = require('./routes/edit');
-var edit2 = require('./routes/edit2');
+// var edit2 = require('./routes/edit2');
 
 var loginSubmit = require('./routes/loginSubmit');
 var loginError = require('./routes/loginError');
 var done = require('./routes/done');
-var done2 = require('./routes/done2');
+// var done2 = require('./routes/done2');
 var remove = require('./routes/remove');
 
 var app = express();
@@ -60,26 +60,26 @@ app.get('/login', login.view);
 app.get('/loginError', loginError.view);
 
 app.get('/', index.view);
-app.get('/index2', index2.view);
+app.get('/index2', index.view2);
 
 // app.get('/users', users.view);
 app.get('/tasks', tasks.view);
-app.get('/tasks2', tasks2.view);
+// app.get('/tasks2', tasks2.view);
 // app.use('/feed', feed);
 
 app.get('/add', add.addTask);
-app.get('/add2', add2.addTask2);
+// app.get('/add2', add2.addTask2);
 app.get('/edit', edit.editTask);
-app.get('/edit2', edit2.editTask2);
+// app.get('/edit2', edit2.editTask2);
 
 
 
-app.get('/groups1', groups1.view);
+// app.get('/groups1', groups1.view);
 app.get('/feed', feed.view);
 app.get('/profile/:name', profile.personInfo);
 app.get('/loginSubmit', loginSubmit.loginSub);
 app.get('/done', done.deleteTask);
-app.get('/done2', done2.deleteTask2);
+// app.get('/done2', done2.deleteTask2);
 app.get('/remove', remove.permaDelete);
 
 // app.get('/groups1', function(req, res, next) {

@@ -40,3 +40,28 @@ exports.view = function(req, res) {
     data.indexData.showAlternate = true;
 	res.render('index', data.indexData);
 };
+
+exports.view2 = function(req, res) {
+
+    var tasks = req.app.get('taskData').cogs;
+    
+    var toDo = tasks.length;
+    var fin = req.app.get('taskData').lifecount.length;
+    var prog = 100*(fin/(toDo+fin));
+    var active = "active";
+
+    var dueToday = [];
+    var utc = new Date().toJSON().slice(0,10);
+    var today = utc.substr(5, 10).concat("-").concat(utc.substr(0, 4));
+    tasks.forEach ( function (task) {
+        if (task.dueDate == today) {
+            dueToday.push(task);
+        }
+    });
+
+    data.indexData.dueToday = dueToday;
+    data.indexData.prog = Math.round(prog);
+
+    data.indexData.showAlternate = false;
+    res.render('index', data.indexData);
+};
