@@ -27,6 +27,10 @@ $('#add-btn').click(function() {
     ga('send', 'event', 'add-btn', 'click');
 });
 
+$('#add-btn2').click(function() {
+    $('#add-modal').fadeToggle();
+    ga('send', 'event', 'add-btn2', 'click');
+});
 
 
 
