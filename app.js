@@ -60,7 +60,7 @@ app.get('/login', login.view);
 app.get('/loginError', loginError.view);
 
 app.get('/', index.view);
-//app.get('/index2', index.view2);
+app.get('/index2', index.view2);
 
 // app.get('/users', users.view);
 app.get('/tasks', tasks.view);
