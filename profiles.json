@@ -34,6 +34,40 @@
 		]
 	},
 	{
+		"username": "robert",
+		"name": "Robert Hunter",
+		"text": "Finished all his tasks for the day!",				
+		"profilepic": "/images/stock7.jpg",
+		"score": 46,
+		"todo": [
+			"robert todo1",
+			"robert todo2",
+			"robert todo3"
+		],
+		"complete": [
+			"robert complete1",
+			"robert complete2",
+			"robert complete3"
+		]
+	},
+	{
+		"username": "jenny",
+		"name": "Jenny Booker",
+		"text": "Just finished studying for her math midterm!",				
+		"profilepic": "/images/stock9.jpg",
+		"score": 46,
+		"todo": [
+			"jenny todo1",
+			"jenny todo2",
+			"jenny todo3"
+		],
+		"complete": [
+			"jenny complete1",
+			"jenny complete2",
+			"jenny complete3"
+		]
+	},
+	{
 		"username": "jane",
 		"name": "Jane Baker",
 		"text": "Completed 5 tasks!",				
@@ -48,6 +82,23 @@
 			"jane complete1",
 			"jane complete2",
 			"jane complete3"
+		]
+	},
+	{
+		"username": "andrew",
+		"name": "Andrew Smith",
+		"text": "Ate a whole pie!",				
+		"profilepic": "/images/stock8.jpg",
+		"score": 46,
+		"todo": [
+			"andrew todo1",
+			"andrew todo2",
+			"andrew todo3"
+		],
+		"complete": [
+			"andrew complete1",
+			"andrew complete2",
+			"andrew complete3"
 		]
 	}
 ]
