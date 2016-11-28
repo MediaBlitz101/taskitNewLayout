@@ -23,14 +23,14 @@
 		},
 		{
 			"name": "John Baker",
-			"text": "Completed 5 tasks!",				
+			"text": "Finished all his tasks for the day!",				
 			"profilepic": "images/stock3.jpg",
 			"link": "profile/jane",
 			"score": 125
 		},
 		{
 			"name": "Jenny Booker",
-			"text": "Completed 5 tasks!",				
+			"text": "Just finished studying for his math midterm!",				
 			"profilepic": "images/stock3.jpg",
 			"link": "profile/jane",
 			"score": 12
