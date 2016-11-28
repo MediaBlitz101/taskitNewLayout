@@ -44,10 +44,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
                 <div class="card text-xs-center">
                     <div class="card-header card-dark blue-grey lighten-1" style="text-align:left">
                         <h4>To Do Today <i class="fa fa-th-list" aria-hidden="true"></i>
-                        {{#if showAlternate}}
-                            <div class="add-btn" id="add-btn"> <i class="fa fa-plus pull-right" aria-hidden="true"></i></div>
-                        {{else}}
-                        {{/if}}
+                            <span class="add-btn" id="add-btn"> <i class="fa fa-plus pull-right" aria-hidden="true"></i></span>
             </h4>
                         <div class="addTask" style="text-align:center">
                             <!-- Trigger/Open the add task modal -->
@@ -71,7 +68,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
                                         </div>
                                         <div class="form-group md-form">
                                             <input type="text" class="flatpickr form-control" id="datepicker" placeholder="Due Date" name="dueDate">
-                                            <label> Due Date </label>
+                                            <label>Due Date</label>
                                         </div>
                                         <div class="form-group md-form">
                                             <input placeholder="(optional)" type="text" id="description" class="form-control" name="description">
@@ -105,10 +102,6 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
                     </div>
                 </div>
             </div>
-            {{#if showAlternate}}
-            {{else}}
-                <button class="btn btn-default pull-right" id="add-btn"> Add Task </button>
-            {{/if}}
         </div>
     </div>
 </div>
