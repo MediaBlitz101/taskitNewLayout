@@ -1,17 +1,16 @@
 {
     "subject": "Cogs 120",
-    "cogs": [ {
-    	"idx": 0,
-    	"task":"Study for Midterm",
-    	"subject": "COGS 120",
-    	"dueDate": "11-09-2016",
-        "description": "review week 1-3 slides"
-    }
-    	
+    "cogs": [
+        {
+            "idx": 0,
+            "task":"Finish assignment 8!!",
+            "subject": "COGS 120",
+            "dueDate": "11-28-2016",
+            "description": "Make the video!!"
+        }
     ],
 
     "finished": [],
 
     "lifecount": []
-
 }
