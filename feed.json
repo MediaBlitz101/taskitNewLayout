@@ -19,27 +19,27 @@
 			"text": "Completed 5 tasks!",				
 			"profilepic": "images/stock3.jpg",
 			"link": "profile/jane",
-			"score": 3445
+			"score": 345
 		},
 		{
-			"name": "John Baker",
-			"text": "Completed 5 tasks!",				
-			"profilepic": "images/stock3.jpg",
-			"link": "profile/jane",
+			"name": "Robert Hunter",
+			"text": "Finished all his tasks for the day!",				
+			"profilepic": "images/stock7.jpg",
+			"link": "profile/robert",
 			"score": 125
 		},
 		{
 			"name": "Jenny Booker",
-			"text": "Completed 5 tasks!",				
-			"profilepic": "images/stock3.jpg",
-			"link": "profile/jane",
+			"text": "Just finished studying for her math midterm!",				
+			"profilepic": "images/stock9.jpg",
+			"link": "profile/jenny",
 			"score": 12
 		},
 		{
-			"name": "Kyle Booker",
-			"text": "Ate a whole pie!",				
-			"profilepic": "images/stock1.jpg",
-			"link": "profile/jane",
+			"name": "Andrew Smith",
+			"text": "Ate a whole pie!",	
+			"profilepic": "images/stock8.jpg",
+			"link": "profile/andrew",
 			"score": 1
 		}
 	]
