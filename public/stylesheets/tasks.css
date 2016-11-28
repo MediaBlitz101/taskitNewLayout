@@ -74,6 +74,9 @@ button{
     color:black;
 }
 
+#left { float: left;} 
+#right { float: right;}
+
 
 
 
