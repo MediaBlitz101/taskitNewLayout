@@ -74,14 +74,14 @@
 		"profilepic": "/images/stock3.jpg",
 		"score": 46,
 		"todo": [
-			"jane todo1",
-			"jane todo2",
-			"jane todo3"
+			"Complete Chemistry lab #3",
+			"Complete Calculus Taylor Series",
+			"Return Text Book to Amazon"
 		],
 		"complete": [
-			"jane complete1",
-			"jane complete2",
-			"jane complete3"
+			"Completed Chemistry lab #2 ",
+			"Completed MCWP Reading #2",
+			"Completed Programming assignment #2"
 		]
 	},
 	{
